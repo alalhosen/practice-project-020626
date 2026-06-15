@@ -5,9 +5,10 @@ import App from "./App.jsx";
 import Root from "./components/Root.jsx";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Hone from "./components/Hone.jsx";
+import Hone from "./components/Home.jsx";
 import Login from "./components/Login.jsx";
 import Register from "./components/Register.jsx";
+import Home from "./components/Home.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Hone></Hone>,
+        element: <Home>  </Home>
       },
       {
         path: "/login",
