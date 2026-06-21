@@ -44,7 +44,7 @@ const Navbar = () => {
             {navlinks}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <a className="btn btn-ghost normal-case text-xl">Auth practice</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         {/* ............... */}
