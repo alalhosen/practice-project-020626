@@ -1,19 +1,19 @@
-import { createContext } from "react";
-import PropTypes from 'prop-types';
+import { createContext, useState } from "react";
+import PropTypes from "prop-types";
 
 export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
-  const authinfo = { name: "nodi sagor khal bill" };
+  const [user, setUser] = useState(null);
+
+  const authinfo = {user};
 
   return (
-    <AuthContext.Provider value={authinfo}>
-      {children}
-      </AuthContext.Provider>
+    <AuthContext.Provider value={authinfo}>{children}</AuthContext.Provider>
   );
 };
 
-export default AuthProvider;   
+export default AuthProvider;
 
 AuthProvider.propTypes = {
   children: PropTypes.node,
