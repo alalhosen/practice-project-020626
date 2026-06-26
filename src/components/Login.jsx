@@ -1,11 +1,23 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const Login = () => {
+  const { signInUser } = useContext(AuthContext);
+
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(email, password);
+
+    signInUser(email,password)
+    .then(result=>{
+      console.log(result)
+    })
+    .catch(error=>{
+      console.log(error)
+    })
   };
 
   return (
@@ -13,7 +25,6 @@ const Login = () => {
       <div className="hero-content flex-col">
         <div className="text-center">
           <h1 className="text-5xl font-bold">Login now!</h1>
-        
         </div>
         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">
@@ -49,8 +60,12 @@ const Login = () => {
                 <button className="btn btn-primary">Login</button>
               </div>
             </form>
-            <p>New to here! Please<Link to="/register"><button className="btn btn-link">Register</button>
-            </Link></p>
+            <p>
+              New to here! Please
+              <Link to="/register">
+                <button className="btn btn-link">Register</button>
+              </Link>
+            </p>
           </div>
         </div>
       </div>

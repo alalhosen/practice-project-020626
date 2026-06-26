@@ -16,10 +16,12 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  const authinfo = { use, createUser };
+  const authinfo = { use, createUser,signInUser };
 
   return (
-    <AuthContext.Provider value={authinfo}>{children}</AuthContext.Provider>
+     <AuthContext.Provider value={authinfo}>
+      {children}
+      </AuthContext.Provider>
   );
 };
 
